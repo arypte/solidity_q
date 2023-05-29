@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "a",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seta_B",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seta_C",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contract/solidity_31~40.sol": "Q38"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contract/solidity_31~40.sol": {
+			"keccak256": "0x5d881cbbe0018fd0dde6ceb7918b7c2a47d02d9c4093cfad5778fdda3d4e3d17",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1a288f42307d0ba96d1cafa389319780a62a2113fafe51b565cc3afcd978ad3a",
+				"dweb:/ipfs/Qmc69hSZUjSrWiQJiSTi97N72bQ4NwNtCzVzm5F7nCmVqP"
+			]
+		}
+	},
+	"version": 1
+}
