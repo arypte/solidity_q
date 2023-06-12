@@ -1,0 +1,89 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "get",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "number",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "pwd",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct Q70.u_type",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "set",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contract/solidity_61~70.sol": "Q70"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contract/solidity_61~70.sol": {
+			"keccak256": "0xb517cfd72367421c117cb7908ed45e8f28330673cd6443029ac8711b6f03145e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5a95ee0d37797051aa399612fd0b5d2d495d89cc3ff56f2a9dd327ed76bb9103",
+				"dweb:/ipfs/QmUjLN1V8JHUoA32YfdQPtsATJdyiTEoDj3PK954g9WPvS"
+			]
+		}
+	},
+	"version": 1
+}
