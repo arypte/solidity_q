@@ -9,21 +9,16 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_input",
+						"name": "number",
 						"type": "uint256"
 					}
 				],
-				"name": "A",
+				"name": "numberToString",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "pure",
@@ -43,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract/solidity_71~80.sol": "Q74"
+			"contract/solidity_71~80.sol": "NumberToString"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -58,11 +53,11 @@
 	},
 	"sources": {
 		"contract/solidity_71~80.sol": {
-			"keccak256": "0xe1b82445edcc85138c4e11abb24d8f6b749eedc084ee702295839fc53cbb124f",
+			"keccak256": "0x25656fc5823b8d23ec2f1f115a39344d88757cf9a979296673725f3932507d24",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d0d48b69e01904894c669ef9dbc4581c2885435852d081a5dc7c5acdda64ebec",
-				"dweb:/ipfs/QmXkr92uo9tRQFAkqfXDsnu1mgEuQgSkuF8TXbCEJR5hg4"
+				"bzz-raw://d8fa4f2c7f129150d988254f218746730ab6fba7aa81e5ec52fffbb9314076ec",
+				"dweb:/ipfs/QmUp9RV9Rn64CQfmPguR68zH7JSkzntTyJHMu1XwCtduxs"
 			]
 		}
 	},

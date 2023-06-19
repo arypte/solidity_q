@@ -60,11 +60,11 @@
 	},
 	"sources": {
 		"contract/solidity_71~80.sol": {
-			"keccak256": "0x1b9be8cfd5b5d7de66f7b314e29d732a50a8a2236e11f24572e5700008fb1245",
+			"keccak256": "0xe1b82445edcc85138c4e11abb24d8f6b749eedc084ee702295839fc53cbb124f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://294e696b00794068cf9ad5f3ccf8f7ddb7511dc9e42cf4aad17c3a7ad930c3ee",
-				"dweb:/ipfs/QmWLc7XV9sCB27PJTCcaG6NmRNB1J1MR56MgjexjAZzMnv"
+				"bzz-raw://d0d48b69e01904894c669ef9dbc4581c2885435852d081a5dc7c5acdda64ebec",
+				"dweb:/ipfs/QmXkr92uo9tRQFAkqfXDsnu1mgEuQgSkuF8TXbCEJR5hg4"
 			]
 		}
 	},

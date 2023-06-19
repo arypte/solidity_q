@@ -16,14 +16,9 @@
 				"name": "A",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "pure",
@@ -43,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract/solidity_71~80.sol": "Q74"
+			"contract/solidity_71~80.sol": "Q76"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

@@ -108,24 +108,49 @@ contract Q74{
 
 }    
 
+// 문자열을 넣으면 n번 반복하여 쓴 후에 반환하는 함수를 구현하세요.
+// 예) abc,3 -> abcabcabc // ab,5 -> ababababab
+    
+contract Q75{
+
+    function A( string memory _input , uint _n ) public pure returns( string memory ) {
+
+        bytes memory rt_value ;
+
+        for( uint i = 0 ; i < _n ; i ++ ) {
+            rt_value = abi.encodePacked( rt_value , bytes( _input ) ) ;
+        }
+
+        return string( rt_value ) ;
+
+    }
+
+} 
+
+// 1. 숫자 123을 넣으면 문자 123으로 반환하는 함수를 직접 구현하세요.
+
+    
+contract Q76{
+
+    function A( uint _input ) public pure returns( string memory ) {
+
+        bytes memory rt_value ;
+
+        for( uint i = 0 ; i < 3 ; i ++ ) {
+            rt_value = abi.encodePacked( rt_value , abi.encodePacked( ( _input % 10 ) + uint8( bytes1( '0' ) ) ) ) ;
+            _input /= 10 ;
+        }
+
+        // 거꾸로 뒤집기.. 
+
+        return string( rt_value ) ;
+
+    }
+
+}
+
 /*
-1. 문자열을 넣으면 n번 반복하여 쓴 후에 반환하는 함수를 구현하세요.
-    
-    예) abc,3 -> abcabcabc // ab,5 -> ababababab
-    
-- 답안
-    
-    ```solidity
-    
-    ```
-    
-1. 숫자 123을 넣으면 문자 123으로 반환하는 함수를 직접 구현하세요.
-- 답안
-    
-    ```solidity
-    
-    ```
-    
+
 1. 위의 문제와 비슷합니다. 이번에는 openzeppelin의 패키지를 import 하세요.
     
     힌트 : import "@openzeppelin/contracts/utils/Strings.sol";
@@ -135,7 +160,7 @@ contract Q74{
     ```solidity
     
     ```
-    
+/*    
 1. 숫자만 들어갈 수 있는 array를 선언하세요. array 안 요소들 중 최소 하나는 10~25 사이에 있는지를 알려주는 함수를 구현하세요.
     
     예) [1,2,6,9,11,19] -> true (19는 10~25 사이) // [1,9,3,6,2,8,9,39] -> false (어느 숫자도 10~25 사이에 없음)
