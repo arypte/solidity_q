@@ -7,7 +7,22 @@ pragma solidity 0.8.18 ;
 
 
     
-//solidity Q71{ }
+contract Q71{
+
+    uint public a ;
+
+    uint a_time = block.timestamp - 600 ;
+
+    function setA( uint _a ) public {
+
+        require( a_time + 600 < block.timestamp ) ;
+
+        a_time = block.timestamp ;
+        a = _a ;
+
+    }
+
+}
 
     
 //.  contract에 돈을 넣을 수 있는 deposit 함수를 구현하세요. 해당 contract의 돈을 인출하는 함수도 구현하되 오직 owner만 할 수 있게 구현하세요.
@@ -15,32 +30,85 @@ pragma solidity 0.8.18 ;
 // 예) A (배포 직후 owner), B가 20 deposit(B가 owner), C가 10 deposit(B가 여전히 owner), D가 50 deposit(D가 owner),
 //    E가 20 deposit(D), E가 45 depoist(D), E가 65 deposit(E가 owner)
     
-- 답안
+contract Q72{
+
+    address c_owner ;
+    uint max = 0 ;
+
+    constructor(){ c_owner = msg.sender ; }
+
+    modifier chk_owner(){
+
+        require( c_owner == msg.sender ) ;
+        _ ;
+
+    }
     
-    ```solidity
+    function deposit() public payable {
+        if( msg.value > max ){ 
+            max = msg.value ;
+            c_owner = msg.sender ;
+        }
+    }
+
+    function withdraw() public chk_owner{
+
+        payable( msg.sender ).transfer( address( this ).balance ) ;
     
-    ```
+    }
+
+}
     
-1. 위의 문제의 다른 버전입니다. 누적으로 가장 많이 예치하면 owner가 바뀌게 구현하세요.
+// 위의 문제의 다른 버전입니다. 누적으로 가장 많이 예치하면 owner가 바뀌게 구현하세요.
+//  예) A (배포 직후 owner), B가 20 deposit(B가 owner), C가 10 deposit(B가 여전히 owner),
+// D가 50 deposit(D가 owner), E가 20 deposit(D), E가 45 depoist(E가 owner, E 누적 65), E가 65 deposit(E)
     
-    예) A (배포 직후 owner), B가 20 deposit(B가 owner), C가 10 deposit(B가 여전히 owner), D가 50 deposit(D가 owner), E가 20 deposit(D), E가 45 depoist(E가 owner, E 누적 65), E가 65 deposit(E)
+contract Q73{
+
+    address c_owner ;
+    uint max = 0 ;
+    mapping( address => uint ) balance ;
+
+    constructor(){ c_owner = msg.sender ; }
+
+    modifier chk_owner(){
+
+        require( c_owner == msg.sender ) ;
+        _ ;
+
+    }
     
-- 답안
+    function deposit() public payable {
+        balance[ msg.sender ] += msg.value ;
+        if( balance[ msg.sender ] > max ){
+            max = balance[ msg.sender ] ;
+            c_owner = msg.sender ;
+        } 
+    }
+
+    function withdraw() public chk_owner{
+
+        payable( msg.sender ).transfer( address( this ).balance ) ;
     
-    ```solidity
+    }
+
+}
     
-    ```
-    
-1. 어느 숫자를 넣으면 항상 10%를 추가로 더한 값을 반환하는 함수를 구현하세요.
-    
-    예) 20 -> 22(20 + 2, 2는 20의 10%), 0 // 50 -> 55(50+5, 5는 50의 10%), 0 // 42 -> 46(42+4), 4 (42의 10%는 4.2 -> 46.2, 46과 2를 분리해서 반환) // 27 => 29(27+2), 7 (27의 10%는 2.7 -> 29.7, 29와 7을 분리해서 반환)
-    
-- 답안
-    
-    ```solidity
-    
-    ```
-    
+// 어느 숫자를 넣으면 항상 10%를 추가로 더한 값을 반환하는 함수를 구현하세요.
+// 예) 20 -> 22(20 + 2, 2는 20의 10%), 0 // 50 -> 55(50+5, 5는 50의 10%), 0
+// 42 -> 46(42+4), 4 (42의 10%는 4.2 -> 46.2, 46과 2를 분리해서 반환) // 27 => 29(27+2), 7 (27의 10%는 2.7 -> 29.7, 29와 7을 분리해서 반환)
+
+contract Q74{
+
+    function A( uint _input ) public pure returns( uint , uint ) {
+
+        return ( _input * 11 / 10 , ( _input * 11 ) % 10 ) ;
+
+    }
+
+}    
+
+/*
 1. 문자열을 넣으면 n번 반복하여 쓴 후에 반환하는 함수를 구현하세요.
     
     예) abc,3 -> abcabcabc // ab,5 -> ababababab
@@ -87,3 +155,4 @@ pragma solidity 0.8.18 ;
     
 1. 지금은 동적 array에 값을 넣으면(push) 가장 앞부터 채워집니다. 1,2,3,4 순으로 넣으면 [1,2,3,4] 이렇게 표현됩니다. 그리고 값을 빼려고 하면(pop) 끝의 숫자부터 빠집니다. 가장 먼저 들어온 것이 가장 마지막에 나갑니다. 이런 것들을FILO(First In Last Out)이라고도 합니다. 가장 먼저 들어온 것을 가장 먼저 나가는 방식을 FIFO(First In First Out)이라고 합니다. push와 pop을 이용하되 FIFO 방식으로 바꾸어 보세요.
 - 답안
+*/
