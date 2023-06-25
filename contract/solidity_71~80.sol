@@ -260,4 +260,16 @@ contract Q79_B{
 
 contract Q80{
 
+    uint[] array ;
+    uint p_idx = 0 ;
+
+    function Q_push( uint _input ) public {
+        array.push( _input ) ;
+    }
+
+    function Q_pop() public {
+        require( p_idx < array.length ) ;
+        delete( array[ p_idx ] ) ;
+    }
+
 }
