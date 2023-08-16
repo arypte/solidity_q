@@ -59,22 +59,49 @@ contract Q63 {
 }
 
 // 지갑 주소를 넣으면 5개의 4bytes로 분할하여 반환해주는 함수를 구현하세요.
-/*
+
 contract Q64 {
 
-    function f( address _input ) public pure returns( bytes4[ 5 ] memory ){
+    function splitAddress(address wallet) public pure returns (bytes4[5] memory) {
+        bytes4[5] memory parts;
+        bytes20 addressBytes = bytes20(wallet);
+        //0x 5B38Da6a 701c5685 45dCfcB0 3FcB875f 56beddC4 //40개인데 20bytes로 묶는다 
+        //4byte = 16진수 8자리 = 2진수 32자리
+        // 1bytes = 8bit = 16진수 2자리 = 2진수 8자리
+        // 2bytes = 16bit = 16진수 4자리 = 2진수 16자리
+    
+        // 5B38Da6a 701c5685 45dCfcB0 3FcB875f 56beddC4
+        // 5B38Da6a 701c5685 45dCfcB0 3FcB875f 56beddC4
 
-        uint temp = uint( _input ) ;
+        // 0 = 5B = uint8 ( 5B ) = 16 * 5 + 11 = 91 = 0101 1011
+        // 91 << 24
+        // uint32(0101 1011) = 0101 1011 0000 0000 0000 0000 0000 0000
+        // 1 = 38 =            0000 0000 0011 1000 0000 0000 0000 0000 
+        // 2 = DA              
+        // 3 = 6a
 
-        bytes4[ 5 ] memory rt_value ;
+        // 0101  1011 , 0011 1000 , 0000 0000 , 0000 0000
 
-        return rt_value ;
+        // 1byte = 8bit
+        // 2^4 = 0~15 = 16진수 2개가 1byte
 
+        // 가스비는 연산 + 코드양
+        // 연산 동일, 코드양 줄어듬
 
+        for( uint i = 0 ; i < 5 ; i ++ ) {
+            parts[i] = bytes4(uint32(uint8(addressBytes[i*4])) << 24 |
+                uint32(uint8(addressBytes[i*4+1])) << 16 |
+                uint32(uint8(addressBytes[i*4+2])) << 8 |
+                uint32(uint8(addressBytes[i*4+3])));
+        }
+
+        // i = 0    0 , 1 , 2 , 3
+        // i = 1    4 , 5 , 6 , 7
+        // i = 2    8 , 9 , 10 ,11
+        
+        return parts;
     }
-
 }
-*/
 
     
 // 숫자 3개를 입력하면 그 제곱을 반환하는 함수를 구현하세요.
